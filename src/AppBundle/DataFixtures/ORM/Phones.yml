@@ -1,0 +1,4 @@
+AppBundle\Entity\Phone:
+    Phone_{1..200000}:
+        number: <phoneNumber()>
+        company: '@Company*'

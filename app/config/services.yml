@@ -1,0 +1,25 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+    token_generator:
+        class: AppBundle\Service\TokenGenerator
+    jms_serializer.object_constructor:
+        alias: "jms_serializer.doctrine_object_constructor"
+        public: "false"
+    jsonrpc.jsonrpccontroller:
+        class: AppBundle\Controller\JsonRpcController
+        arguments: ["@service_container"]
+    company:
+        class: AppBundle\Api\CompanyApi
+        tags:
+          - {name: "jsonrpc.exposable"}
+    building:
+        class: AppBundle\Api\BuildingApi
+        tags:
+          - {name: "jsonrpc.exposable"}
+#    service_name:
+#        class: AppBundle\Directory\ClassName
+#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]

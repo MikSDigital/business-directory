@@ -1,0 +1,7 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+json_rpc:
+    path:     /jsonrpc
+    defaults: { _controller: jsonrpc.jsonrpccontroller:execute }

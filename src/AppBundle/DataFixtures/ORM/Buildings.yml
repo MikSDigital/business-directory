@@ -1,0 +1,5 @@
+AppBundle\Entity\Building:
+    Building_{1..500}:
+        address (unique): <address()>
+        latitude: <latitude()>
+        longitude: <longitude()>

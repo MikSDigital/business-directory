@@ -1,0 +1,4 @@
+AppBundle\Entity\Category:
+    Category_{1..200}:
+        name (unique): <bs()>
+        parent: 90%? @Category*
